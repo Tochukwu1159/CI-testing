@@ -74,7 +74,7 @@ describe("test read pagination  route", () => {
 			.spyOn(TodoInstance, "findAll")
 			.mockImplementation(() => mockCreateTodo());
 
-		const res = await request(app).get("/api/v1/read?limit=5")
+		const res = await request(app).get("/api/v1/read?limit=5");
 		expect(mockCreateTodo).toHaveBeenCalledTimes(1);
 		expect(res.body).toEqual({
 			msg: "fail to read",
